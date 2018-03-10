@@ -1,0 +1,63 @@
+.select-box {
+  position: relative;
+  display: inline-block;
+  margin-right: 17px;
+  font-size: 14px;
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  // 这个宽度？
+  width: 157px;
+  height: 38px;
+  line-height: 38px;
+  vertical-align: middle;
+  border: 1px solid #D4DEE5;
+  color: #999;
+  padding-left: 10px;
+  &:hover {
+    border: 1px solid #4091EF;
+  }
+}
+.option-box {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background: #fff;
+  //  top == height(.select)
+  top: 38px;
+  
+}
+.option {
+  height: 38px;
+  line-height: 38px;
+  vertical-align: middle;
+  width: 145px;
+  border: 1px solid #D4DEE5;
+  padding-left: 10px;
+  &:not(:first-child) {
+    margin-top: -1px;
+  }
+}
+
+//  倒三角
+.triangle {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 6px solid #000;
+  background: #fff;
+}
+.hover {
+   background: #D4DEE5;
+    color: #fff;
+}
+
+.select-hover {
+  border: 1px solid #4091EF;
+}

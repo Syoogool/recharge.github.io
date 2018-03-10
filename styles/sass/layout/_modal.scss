@@ -1,0 +1,31 @@
+@charset "utf-8"; // 模态框
+
+.modal-overlay {
+  position  : fixed;
+  display   : none;
+  height    : 100%;
+  width     : 100%;
+  left      : 0;
+  top       : 0;
+  z-index   : 5000;
+  background: rgba(0,0,0,.7);
+  // opacity: 0.8; rgba与opacity的区别是不传递给子元素
+}
+
+.modal-data {
+  position  : absolute;
+  width     : 400px;
+  background: #fff;
+  z-index   : 10000;
+}
+// 垂直居中
+
+.vertical-center {
+  position   : absolute;
+  width      : 600px;
+  height     : 454px;
+  top        : 50%;
+  left       : 50%;
+  margin-left: -300px;
+  margin-top : -227px;
+}

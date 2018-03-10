@@ -1,0 +1,360 @@
+@charset "utf-8";
+@import "compass/reset";
+@import "../layout/menu";
+@import "../layout/nav";
+@import "../layout/contentBox";
+
+@import "../helpers/mixin";
+
+.wrapper {
+  // position: relative;
+  font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+}
+.container {
+  min-width: 815px;
+  overflow-x:scroll;
+}
+.msg {
+  p {
+    display           : inline-block;
+    width             : 94%;
+    margin            : 20px 0;
+    font-size         : 16px;
+    line-height       : 22px;
+    color             : #333;
+    word-wrap: break-word;
+    /* 多行 ... */
+    display           : -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow          : hidden;
+  }
+}
+
+.filter-box {
+  position : absolute;
+  z-index  : 1;
+  top      : 40px;
+  left     : 57px;
+  width    : 51.9%;
+  height   : 38px;
+  font-size: 0;
+
+  a {
+    display        : inline-block;
+    width          : 30%;
+    font-size      : 16px;
+    color          : #999;
+    text-align     : center;
+    line-height    : 38px;
+    border         : 1px solid #999;
+    text-decoration: none;
+    /* 去除重合的边框 */
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+
+  .active {
+    background: #4091EF;
+    color     : #fff;
+    border    : 1px solid #4091EF;
+  }
+}
+
+.operate {
+  display : right;
+  height  : 40px;
+  margin  : 40px 0;
+  overflow: hidden;
+
+  .btn {
+    &:not(.btn-edit) {
+      display: none;
+    }
+    float      : right;
+    height     : 38px;
+    width      : 112px;
+    font-size  : 14px;
+    outline    : none;
+    padding    : 0;
+    border     : 0;
+    margin-left: 20px;
+  }
+
+  .btn-edit {
+    background: #4091EF;
+    color     : #fff;
+
+    &:active,
+    &:hover {
+      background: #287CDF;
+      border    : 1px solid #4091EF;
+    }
+  }
+
+  .btn-active {
+    outline   : none;
+    background: #67BE3D;
+    color     : #fff;
+    &:hover {
+      background: #499823;
+    }
+  }
+}
+
+.tip-title {
+  span {
+    font-size: 14px;
+    color    : #666;
+
+    &:first-child {
+      float: left;
+    }
+
+    &:last-child {
+      float: right;
+    }
+  }
+}
+
+.hr {
+  border    : 1px solid #DDDEE8;
+  margin-top: 12px;
+}
+// clear float
+
+.clearfix:after {
+  content: "\200B";
+  display: block;
+  height : 0;
+  clear  : both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+/*IE/7/6*/
+//  留言样式
+//==============
+
+.leave-msg {
+  padding      : 40px 0;
+  border-bottom: 1px dashed #DDDEE8;
+  overflow     : hidden;
+}
+// 操作按钮
+
+.operate-btn {
+  float: left;
+  width: 12.5%;
+
+  input {
+    float     : right;
+    display   : block;
+    outline   : none;
+    width     : 110px;
+    height    : 30px;
+    padding   : 0;
+    font-size : 14px;
+    background: #fff;
+    margin-top: 20px;
+  }
+  .btn-show {
+    border: 1px solid #4091EF;
+    color : #4091EF;
+
+    &:active,
+    &:hover {
+      background: #4091EF;
+      color     : #fff;
+    }
+  }
+
+  .btn-cancel,
+  .btn-delete,
+  .btn-hide {
+    border: 1px solid #67BE3D;
+    color : #67BE3D;
+
+    &:active,
+    &:hover {
+      background: #67BE3D;
+      color     : #fff;
+    }
+  }
+}
+
+ .btn-all-select {
+    background: #4091EF;
+    border: 1px solid #4091EF;
+    color: #fff;
+    &:hover {
+      background: #287CDF;
+    }
+  }
+
+
+/* 复选框 */
+.pri-checkbox {
+  /* 隐藏原来的 checkbox */
+  opacity: 0;
+}
+.btn-checkbox {
+  display: none;
+}
+.init-checkbox {
+  width     : 28px;
+  height    : 28px;
+  float     : right;
+  margin-top: 20px;
+  border    : 1px solid #DDDEE8;
+  &:hover {
+    border: 1px solid #4091EF;
+  }
+}
+.checkbox-img {
+  display   : none;
+  width     : 30px;
+  height    : 30px;
+  float     : right;
+  margin-top: 20px;
+}
+
+/* 留言用户及内容 */
+.user-msg {
+  float: left;
+  width: 87.5%;
+}
+.user-box {
+  .name {
+    // display: inline-block;
+    font-size    : 24px;
+    color        : #333;
+    /* 单行 ... */
+    max-width    : 500px;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+    white-space  : nowrap;
+  }
+  span:not(:first-child) {
+    margin-left: 6px;
+  }
+  .nice {
+    color    : #F37D00;
+    font-size: 20px;
+  }
+}
+.user-msg .msg-time {
+  // 单独一个类的优先级不够
+  font-size: 14px;
+  color    : #999;
+}
+.vertical-center {
+  position: relative;
+  top     : 50%;
+  left    : 50%;
+}
+
+//  模态框
+//============
+
+.modal-overlay-box {
+  position  : fixed;
+  display   : none;
+  height    : 100%;
+  width     : 100%;
+  left      : 0;
+  top       : 0;
+  z-index   : 5000;
+  background: rgba(0,0,0,.7);
+  // opacity: 0.8; rgba与opacity的区别是不传递给子元素
+}
+
+.modal-box {
+  position     : fixed;
+  padding      : 24px 30px;
+  border-radius: 5px;
+  background   : #fff;
+  z-index      : 10000;
+
+  .close {
+    float     : right;
+    display   : inline-block;
+    width     : 15px;
+    height    : 15px;
+    margin-top: -7px;
+  }
+
+  .icon-close {
+    display          : block;
+    width            : 15px;
+    height           : 2px;
+    margin-top       : 7px;
+    background       : #D4DEE5;
+    line-height      : 0;
+    font-size        : 0;
+    vertical-align   : middle;
+    -webkit-transform: rotate(45deg);
+
+    &:after {
+      content          : '/';
+      display          : block;
+      width            : 15px;
+      height           : 2px;
+      background       : #D4DEE5;
+      -webkit-transform: rotate(-90deg);
+    }
+  }
+
+  h1 {
+    font-size: 30px;
+    color    : #333;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size : 14px;
+    color     : #666;
+  }
+
+  .operate {
+    margin-top: 100px;
+
+    button {
+      float      : right;
+      width      : 112px;
+      height     : 38px;
+      margin-left: 10px;
+      background : #FFFFFF;
+      border     : 1px solid #B9BDC1;
+      font-size  : 14px;
+      color      : #999;
+      padding    : 0;
+
+      &:active,
+      &:hover {
+        background: #4091EF;
+        border    : 1px solid #4091EF;
+        color     : #fff;
+      }
+    }
+  }
+}
+// 垂直居中
+
+.vertical-center-s {
+  position   : absolute;
+  width      : 600px;
+  height     : 260px;
+  top        : 50%;
+  left       : 50%;
+  margin-left: -300px;
+  margin-top : -130px;
+}
+
+.html-body-overflow {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+

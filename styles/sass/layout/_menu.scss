@@ -1,0 +1,61 @@
+//=================
+//  菜单栏
+// ================
+
+.menu {
+  position  : fixed;
+  left      : 0;
+  top       : 0;
+  width     : 146px;
+  height    : 100%;
+  background: #287CDF;
+  z-index: 1000;
+}
+
+.menu-item {
+  margin-top: 70px;
+  height    : 140px;
+  width     : 146px;
+  overflow  : hidden;
+
+  a {
+    display        : block;
+    height         : 140px;
+    width          : 146px;
+    text-decoration: none;
+
+    img {
+      display    : block;
+      margin-top : 30px;
+      margin-left: 48px;
+    }
+
+    p {
+      margin-top     : 20px;
+      text-align     : center;
+      font-size      : 16px;
+      color          : #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.menu-item-selected,
+.menu-item:hover {
+  background: #1466C7;
+}
+
+.logo {
+  height    : 140px;
+  width     : 146px;
+  margin-top: 30px;
+  background: url("../../../images/touch/logo.png") no-repeat top;
+  overflow  : hidden;
+
+  img {
+    display       : block;
+    max-width     : 70px;
+    vertical-align: middle;
+    margin        : 30px auto 0;
+  }
+}

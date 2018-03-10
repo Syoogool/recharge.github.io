@@ -1,0 +1,460 @@
+<!DOCTYPE html lang="zh-CN">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>充值管理后台系统</title>
+    <!--360浏览器基于Webkit内核浏览-->
+    <meta name="render" content="webkit">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="styles/stylesheets/page/shop.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal-overlay">
+      <div class="modal-data vertical-center">
+        <form action="" class="shop-form">
+          <h2 class="title">新增商品</h2>
+          <div class="item">
+            <label for="">商品ID</label>
+            <input id="id" type="text" name='ID' value='' placeholder="请选择商品ID">
+          </div>
+          <div id="type" class="item">
+            <label for="">商品类型</label>
+            <span class="span" name="huafei" value>手机话费</span>
+            <span class="span">流量</span>
+          </div>
+          <div id="area" class="item">
+            <label for="">商品省份</label>
+            <div class="select-box">
+              <input type="text" class="select" name='province' value='' placeholder="省/自治区/直辖市/特别行政区" readonly="readonly">
+              <div class="triangle"></div>
+              <ul class="option-box">
+                <li class="option">广东省</li>
+                <li class="option">湖北省</li>
+                <li class="option">福建省</li>
+              </ul>
+            </div>
+          </div>
+          <div id="price" class="item">
+            <label for="">商品价格</label>
+            <div class="select-box">
+              <input class="select" type="text" placeholder="请选择商品价格" readonly="readonly">
+              <div class="triangle"></div>
+              <ul class="option-box">
+                <li class="option">10元</li>
+                <li class="option">30元</li>
+                <li class="option">50元</li>
+                <li class="option">100元</li>
+                <li class="option">200元</li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <button id="j-close" class="btn-cancel">取消</button>
+            <button id="j-confirm" class="btn-confirm">确定</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="menu">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/touch/icon-logo.png" alt="logo">
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="index.html">
+            <img src="images/touch/Rectangle.png" alt="">
+            <p>管理留言</p>
+          </a>
+        </div>
+        <div class="menu-item menu-item-selected">
+          <a href="javascript:;">
+            <img src="images/touch/Rectangle1.png" alt="">
+            <p>商品配置</p>
+          </a>
+        </div>
+      </div>
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="active" href="javascript:;">支付宝</a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:;">服务商</a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:;">公众号</a>
+          </li>
+        </ul>
+        <div class="shop-table">
+
+          <div id="alipay" class="content">
+            <form action="" class="form">
+              <div class="select-tab">
+                <div class="select-box">
+                  <input class="select" type="text" placeholder="省份" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-province">
+                    <li class="option">广东省</li>
+                    <li class="option">河南省</li>
+                    <li class="option">广西省</li>
+                    <li class="option">江苏省</li>
+                    <li class="option">山东省</li>
+                    <li class="option">河北省</li>
+                    <li class="option">福建省</li>
+                  </ul>
+                </div>
+                <div class="select-box">
+                  <input class="select" type="text" placeholder="金额" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-price">
+                    <li class="option">10元</li>
+                    <li class="option">20元</li>
+                    <li class="option">30元</li>
+                    <li class="option">50元</li>
+                    <li class="option">100元</li>
+                    <li class="option">200元</li>
+                  </ul>
+                </div>
+                <div class="select-box">
+                  <input type="text" class="select" id="j-o" placeholder="操作" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-operate">
+                    <li class="option">下架</li>
+                    <li class="option">无</li>
+                  </ul>
+                </div>
+
+                <input class="add-product js-add-product" data-platform="alipay" type="button" value="新建商品">
+              </div>
+
+              <!-- 表格 -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td>序号</td>
+                    <td>商品</td>
+                    <td>类型</td>
+                    <td>省份</td>
+                    <td>充值面额</td>
+                    <td>操作</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>001</td>
+                    <td>支付宝GA101</td>
+                    <td>手机话费</td>
+                    <td>广东省</td>
+                    <td>100元</td>
+                    <td class="td-operate">
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete" id="j-del">删除</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>002</td>
+                    <td>支付宝GA102</td>
+                    <td>手机话费</td>
+                    <td>广东省</td>
+                    <td>50元</td>
+                    <td class="td-operate">
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>003</td>
+                    <td>支付宝GA103</td>
+                    <td>手机话费</td>
+                    <td>广东省</td>
+                    <td>20元</td>
+                    <td>
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+
+          <div id="serv-provider" class="content">
+            <form action="" class="form">
+              <div class="select-tab">
+                <div class="select-box">
+                  <input class="select" type="text" placeholder="省份" $readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-province">
+                    <li class="option">广东省</li>
+                    <li class="option">河南省</li>
+                    <li class="option">广西省</li>
+                    <li class="option">江苏省</li>
+                    <li class="option">山东省</li>
+                    <li class="option">河北省</li>
+                    <li class="option">福建省</li>
+                  </ul>
+                </div>
+                <div class="select-box">
+                  <input class="select" type="text" placeholder="金额" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-price">
+                    <li class="option">10元</li>
+                    <li class="option">20元</li>
+                    <li class="option">30元</li>
+                    <li class="option">50元</li>
+                    <li class="option">100元</li>
+                    <li class="option">200元</li>
+                  </ul>
+                </div>
+                <div class="select-box">
+                  <input type="text" class="select" placeholder="操作" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-operate">
+                    <li class="option">下架</li>
+                    <li class="option">无</li>
+                  </ul>
+                </div>
+
+                <input class="add-product js-add-product" data-platform="serv-provider" type="button" value="新建商品">
+              </div>
+
+              <!-- 表格 -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td>序号</td>
+                    <td>商品</td>
+                    <td>类型</td>
+                    <td>省份</td>
+                    <td>充值面额</td>
+                    <td>操作</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>001</td>
+                    <td>服务商SA101</td>
+                    <td>手机话费</td>
+                    <td>广东省</td>
+                    <td>100元</td>
+                    <td class="td-operate">
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>002</td>
+                    <td>服务商SA102</td>
+                    <td>手机话费</td>
+                    <td>广西省</td>
+                    <td>50元</td>
+                    <td class="td-operate">
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>003</td>
+                    <td>服务商SA103</td>
+                    <td>手机话费</td>
+                    <td>湖北省</td>
+                    <td>20元</td>
+                    <td>
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+                    <tr>
+                    <td>004</td>
+                    <td>服务商SA104</td>
+                    <td>流量</td>
+                    <td>湖北省</td>
+                    <td>200元</td>
+                    <td>
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+
+          <div id="wechat" class="content">
+            <form action="" class="form">
+              <div class="select-tab">
+                <div class="select-box">
+                  <input class="select" type="text" placeholder="省份" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-province">
+                    <li class="option">广东省</li>
+                    <li class="option">河南省</li>
+                    <li class="option">广西省</li>
+                    <li class="option">江苏省</li>
+                    <li class="option">山东省</li>
+                    <li class="option">河北省</li>
+                    <li class="option">福建省</li>
+                  </ul>
+                </div>
+                <div class="select-box">
+                  <input class="select" type="text" placeholder="金额" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box js-price">
+                    <li class="option">10元</li>
+                    <li class="option">20元</li>
+                    <li class="option">30元</li>
+                    <li class="option">50元</li>
+                    <li class="option">100元</li>
+                    <li class="option">200元</li>
+                  </ul>
+                </div>
+                <div class="select-box js-operate">
+                  <input type="text" class="select" placeholder="操作" readonly="readonly">
+                  <div class="triangle"></div>
+                  <ul class="option-box">
+                    <li class="option">下架</li>
+                    <li class="option">无</li>
+                  </ul>
+                </div>
+
+                <input class="add-product js-add-product" data-platform="wechat" type="button" value="新建商品">
+              </div>
+
+              <!-- 表格 -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td>序号</td>
+                    <td>商品</td>
+                    <td>类型</td>
+                    <td>省份</td>
+                    <td>充值面额</td>
+                    <td>操作</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>001</td>
+                    <td>微信WA101</td>
+                    <td>手机话费</td>
+                    <td>广东省</td>
+                    <td>100元</td>
+                    <td class="td-operate">
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>002</td>
+                    <td>微信WA102</td>
+                    <td>手机话费</td>
+                    <td>广东省</td>
+                    <td>50元</td>
+                    <td class="td-operate">
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>003</td>
+                    <td>微信WA103</td>
+                    <td>流量</td>
+                    <td>广东省</td>
+                    <td>20元</td>
+                    <td>
+                      <div>
+                        <span class="hide on-shelf">上架</span>
+                      </div>
+                      <div>
+                        <span class="off-shelf">下架</span>
+                      </div>
+                      <div>
+                        <span class="delete js-delete">删除</span>
+                      </div>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <script src="scripts/jquery-migrate-3.0.0.js"></script>
+    <script src="scripts/shop.js"></script>
+  </body>
+
+</html>

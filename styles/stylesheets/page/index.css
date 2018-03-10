@@ -1,0 +1,578 @@
+@charset "UTF-8";
+/* line 5, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, H:/application/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../../sass/layout/_menu.scss */
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 146px;
+  height: 100%;
+  background: #287CDF;
+  z-index: 1000;
+}
+
+/* line 15, ../../sass/layout/_menu.scss */
+.menu-item {
+  margin-top: 70px;
+  height: 140px;
+  width: 146px;
+  overflow: hidden;
+}
+/* line 21, ../../sass/layout/_menu.scss */
+.menu-item a {
+  display: block;
+  height: 140px;
+  width: 146px;
+  text-decoration: none;
+}
+/* line 27, ../../sass/layout/_menu.scss */
+.menu-item a img {
+  display: block;
+  margin-top: 30px;
+  margin-left: 48px;
+}
+/* line 33, ../../sass/layout/_menu.scss */
+.menu-item a p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 43, ../../sass/layout/_menu.scss */
+.menu-item-selected,
+.menu-item:hover {
+  background: #1466C7;
+}
+
+/* line 48, ../../sass/layout/_menu.scss */
+.logo {
+  height: 140px;
+  width: 146px;
+  margin-top: 30px;
+  background: url("../../../images/touch/logo.png") no-repeat top;
+  overflow: hidden;
+}
+/* line 55, ../../sass/layout/_menu.scss */
+.logo img {
+  display: block;
+  max-width: 70px;
+  vertical-align: middle;
+  margin: 30px auto 0;
+}
+
+/* line 4, ../../sass/layout/_nav.scss */
+.container {
+  margin-left: 146px;
+}
+
+/* line 8, ../../sass/layout/_nav.scss */
+.nav {
+  width: 100% px;
+  height: 80px;
+  background: #fff;
+  overflow: hidden;
+}
+/* line 14, ../../sass/layout/_nav.scss */
+.nav li {
+  float: left;
+  list-style-type: none;
+  margin: 0 8.3333%;
+}
+/* line 19, ../../sass/layout/_nav.scss */
+.nav li a {
+  display: block;
+  font-size: 20px;
+  height: 20px;
+  text-decoration: none;
+  color: #3D516C;
+  padding-top: 30px;
+  padding-bottom: 27px;
+  border-bottom: 3px solid rgba(64, 145, 239, 0);
+}
+/* line 30, ../../sass/layout/_nav.scss */
+.nav li .active,
+.nav li li:hover {
+  color: #4091EF;
+  border-bottom: 3px solid #4091ef;
+}
+
+/* line 4, ../../sass/layout/_contentBox.scss */
+.msg {
+  width: 100%;
+}
+
+/* line 7, ../../sass/layout/_contentBox.scss */
+.content {
+  position: relative;
+  height: 2166px;
+  border-width: 22px 33px 0 33px;
+  border-style: solid;
+  border-color: #EAEFF2;
+  background: #fff;
+  /* 子元素的margin-top 不会传递给父元素 */
+  overflow: hidden;
+}
+/* line 16, ../../sass/layout/_contentBox.scss */
+.content:not(:first-child) {
+  display: none;
+}
+
+/* line 20, ../../sass/layout/_contentBox.scss */
+.form {
+  position: relative;
+  padding-left: 57px;
+  padding-right: 38px;
+}
+/* line 24, ../../sass/layout/_contentBox.scss */
+.form:not(:first-child) {
+  display: none;
+}
+
+/* line 29, ../../sass/layout/_contentBox.scss */
+.show {
+  display: block;
+}
+
+/* line 32, ../../sass/layout/_contentBox.scss */
+.hide {
+  display: none;
+}
+
+/* line 9, ../../sass/page/index.scss */
+.wrapper {
+  font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+}
+
+/* line 13, ../../sass/page/index.scss */
+.container {
+  min-width: 815px;
+  overflow-x: scroll;
+}
+
+/* line 18, ../../sass/page/index.scss */
+.msg p {
+  display: inline-block;
+  width: 94%;
+  margin: 20px 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333;
+  word-wrap: break-word;
+  /* 多行 ... */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+/* line 34, ../../sass/page/index.scss */
+.filter-box {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  left: 57px;
+  width: 51.9%;
+  height: 38px;
+  font-size: 0;
+}
+/* line 43, ../../sass/page/index.scss */
+.filter-box a {
+  display: inline-block;
+  width: 30%;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  line-height: 38px;
+  border: 1px solid #999;
+  text-decoration: none;
+  /* 去除重合的边框 */
+}
+/* line 53, ../../sass/page/index.scss */
+.filter-box a:not(:first-child) {
+  margin-left: -1px;
+}
+/* line 58, ../../sass/page/index.scss */
+.filter-box .active {
+  background: #4091EF;
+  color: #fff;
+  border: 1px solid #4091EF;
+}
+
+/* line 65, ../../sass/page/index.scss */
+.operate {
+  display: right;
+  height: 40px;
+  margin: 40px 0;
+  overflow: hidden;
+}
+/* line 71, ../../sass/page/index.scss */
+.operate .btn {
+  float: right;
+  height: 38px;
+  width: 112px;
+  font-size: 14px;
+  outline: none;
+  padding: 0;
+  border: 0;
+  margin-left: 20px;
+}
+/* line 72, ../../sass/page/index.scss */
+.operate .btn:not(.btn-edit) {
+  display: none;
+}
+/* line 85, ../../sass/page/index.scss */
+.operate .btn-edit {
+  background: #4091EF;
+  color: #fff;
+}
+/* line 89, ../../sass/page/index.scss */
+.operate .btn-edit:active, .operate .btn-edit:hover {
+  background: #287CDF;
+  border: 1px solid #4091EF;
+}
+/* line 96, ../../sass/page/index.scss */
+.operate .btn-active {
+  outline: none;
+  background: #67BE3D;
+  color: #fff;
+}
+/* line 100, ../../sass/page/index.scss */
+.operate .btn-active:hover {
+  background: #499823;
+}
+
+/* line 107, ../../sass/page/index.scss */
+.tip-title span {
+  font-size: 14px;
+  color: #666;
+}
+/* line 111, ../../sass/page/index.scss */
+.tip-title span:first-child {
+  float: left;
+}
+/* line 115, ../../sass/page/index.scss */
+.tip-title span:last-child {
+  float: right;
+}
+
+/* line 121, ../../sass/page/index.scss */
+.hr {
+  border: 1px solid #DDDEE8;
+  margin-top: 12px;
+}
+
+/* line 127, ../../sass/page/index.scss */
+.clearfix:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/* line 134, ../../sass/page/index.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/*IE/7/6*/
+/* line 141, ../../sass/page/index.scss */
+.leave-msg {
+  padding: 40px 0;
+  border-bottom: 1px dashed #DDDEE8;
+  overflow: hidden;
+}
+
+/* line 148, ../../sass/page/index.scss */
+.operate-btn {
+  float: left;
+  width: 12.5%;
+}
+/* line 152, ../../sass/page/index.scss */
+.operate-btn input {
+  float: right;
+  display: block;
+  outline: none;
+  width: 110px;
+  height: 30px;
+  padding: 0;
+  font-size: 14px;
+  background: #fff;
+  margin-top: 20px;
+}
+/* line 163, ../../sass/page/index.scss */
+.operate-btn .btn-show {
+  border: 1px solid #4091EF;
+  color: #4091EF;
+}
+/* line 167, ../../sass/page/index.scss */
+.operate-btn .btn-show:active, .operate-btn .btn-show:hover {
+  background: #4091EF;
+  color: #fff;
+}
+/* line 174, ../../sass/page/index.scss */
+.operate-btn .btn-cancel,
+.operate-btn .btn-delete,
+.operate-btn .btn-hide {
+  border: 1px solid #67BE3D;
+  color: #67BE3D;
+}
+/* line 180, ../../sass/page/index.scss */
+.operate-btn .btn-cancel:active, .operate-btn .btn-cancel:hover,
+.operate-btn .btn-delete:active,
+.operate-btn .btn-delete:hover,
+.operate-btn .btn-hide:active,
+.operate-btn .btn-hide:hover {
+  background: #67BE3D;
+  color: #fff;
+}
+
+/* line 188, ../../sass/page/index.scss */
+.btn-all-select {
+  background: #4091EF;
+  border: 1px solid #4091EF;
+  color: #fff;
+}
+/* line 192, ../../sass/page/index.scss */
+.btn-all-select:hover {
+  background: #287CDF;
+}
+
+/* 复选框 */
+/* line 199, ../../sass/page/index.scss */
+.pri-checkbox {
+  /* 隐藏原来的 checkbox */
+  opacity: 0;
+}
+
+/* line 203, ../../sass/page/index.scss */
+.btn-checkbox {
+  display: none;
+}
+
+/* line 206, ../../sass/page/index.scss */
+.init-checkbox {
+  width: 28px;
+  height: 28px;
+  float: right;
+  margin-top: 20px;
+  border: 1px solid #DDDEE8;
+}
+/* line 212, ../../sass/page/index.scss */
+.init-checkbox:hover {
+  border: 1px solid #4091EF;
+}
+
+/* line 216, ../../sass/page/index.scss */
+.checkbox-img {
+  display: none;
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-top: 20px;
+}
+
+/* 留言用户及内容 */
+/* line 225, ../../sass/page/index.scss */
+.user-msg {
+  float: left;
+  width: 87.5%;
+}
+
+/* line 230, ../../sass/page/index.scss */
+.user-box .name {
+  font-size: 24px;
+  color: #333;
+  /* 单行 ... */
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 240, ../../sass/page/index.scss */
+.user-box span:not(:first-child) {
+  margin-left: 6px;
+}
+/* line 243, ../../sass/page/index.scss */
+.user-box .nice {
+  color: #F37D00;
+  font-size: 20px;
+}
+
+/* line 248, ../../sass/page/index.scss */
+.user-msg .msg-time {
+  font-size: 14px;
+  color: #999;
+}
+
+/* line 253, ../../sass/page/index.scss */
+.vertical-center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+/* line 262, ../../sass/page/index.scss */
+.modal-overlay-box {
+  position: fixed;
+  display: none;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5000;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* line 274, ../../sass/page/index.scss */
+.modal-box {
+  position: fixed;
+  padding: 24px 30px;
+  border-radius: 5px;
+  background: #fff;
+  z-index: 10000;
+}
+/* line 281, ../../sass/page/index.scss */
+.modal-box .close {
+  float: right;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-top: -7px;
+}
+/* line 289, ../../sass/page/index.scss */
+.modal-box .icon-close {
+  display: block;
+  width: 15px;
+  height: 2px;
+  margin-top: 7px;
+  background: #D4DEE5;
+  line-height: 0;
+  font-size: 0;
+  vertical-align: middle;
+  -webkit-transform: rotate(45deg);
+}
+/* line 300, ../../sass/page/index.scss */
+.modal-box .icon-close:after {
+  content: '/';
+  display: block;
+  width: 15px;
+  height: 2px;
+  background: #D4DEE5;
+  -webkit-transform: rotate(-90deg);
+}
+/* line 310, ../../sass/page/index.scss */
+.modal-box h1 {
+  font-size: 30px;
+  color: #333;
+}
+/* line 315, ../../sass/page/index.scss */
+.modal-box p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+/* line 321, ../../sass/page/index.scss */
+.modal-box .operate {
+  margin-top: 100px;
+}
+/* line 324, ../../sass/page/index.scss */
+.modal-box .operate button {
+  float: right;
+  width: 112px;
+  height: 38px;
+  margin-left: 10px;
+  background: #FFFFFF;
+  border: 1px solid #B9BDC1;
+  font-size: 14px;
+  color: #999;
+  padding: 0;
+}
+/* line 335, ../../sass/page/index.scss */
+.modal-box .operate button:active, .modal-box .operate button:hover {
+  background: #4091EF;
+  border: 1px solid #4091EF;
+  color: #fff;
+}
+
+/* line 346, ../../sass/page/index.scss */
+.vertical-center-s {
+  position: absolute;
+  width: 600px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -130px;
+}
+
+/* line 356, ../../sass/page/index.scss */
+.html-body-overflow {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

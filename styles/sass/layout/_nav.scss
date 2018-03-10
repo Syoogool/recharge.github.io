@@ -1,0 +1,36 @@
+// 导航栏
+// =======
+
+.container {
+  margin-left: 146px;
+}
+
+.nav {
+  width     : 100%px;
+  height    : 80px;
+  background: #fff;
+  overflow  : hidden;
+
+  li {
+    float          : left;
+    list-style-type: none;
+    margin         : 0 8.3333%;
+
+    a {
+      display        : block;
+      font-size      : 20px;
+      height         : 20px;
+      text-decoration: none;
+      color          : #3D516C;
+      padding-top    : 30px;
+      padding-bottom : 27px;
+      border-bottom  : 3px solid rgba(64,145,239,0);
+    }
+
+    .active,
+    li:hover {
+      color        : #4091EF;
+      border-bottom: 3px solid rgba(64,145,239,1);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+// content box
+.msg {
+  width: 100%;
+}
+.content { 
+  position: relative;
+  height: 2166px;
+  border-width: 22px 33px 0 33px;
+  border-style: solid;
+  border-color: #EAEFF2;
+  background: #fff;
+  /* 子元素的margin-top 不会传递给父元素 */
+  overflow: hidden;
+  &:not(:first-child) {
+    display: none;
+  }
+}
+.form {
+    position: relative;
+    padding-left: 57px;
+    padding-right: 38px;
+    &:not(:first-child) {
+      display: none;
+    }
+  }
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
